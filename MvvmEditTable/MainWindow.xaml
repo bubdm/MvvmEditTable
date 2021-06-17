@@ -1,0 +1,24 @@
+﻿<Window x:Class="MvvmEditTable.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MvvmEditTable"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <StackPanel>
+        <DataGrid Name="Table" ItemsSource="{Binding TableData}" AutoGenerateColumns="False" RowHeight="50" CanUserAddRows="False">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Id" Binding="{Binding Id}" IsReadOnly="True" />
+                <DataGridTextColumn Header="Name" Binding="{Binding Name}" />
+                <DataGridTextColumn Header="Age" Binding="{Binding Age}" />
+            </DataGrid.Columns>
+        </DataGrid>
+
+        <StackPanel Orientation="Horizontal">
+            <Button Name="AddButton" Content="+" Command="{Binding rowEditCommand}" CommandParameter="{Binding ElementName=AddButton, Path=Content}" />
+            <Button Name="SubButton" Content="-" Command="{Binding rowEditCommand}" CommandParameter="{Binding ElementName=SubButton, Path=Content}" />
+        </StackPanel>
+        
+    </StackPanel>
+</Window>
