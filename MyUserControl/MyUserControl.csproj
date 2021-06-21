@@ -55,9 +55,17 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="ExtendUserControl.xaml.cs">
+      <DependentUpon>ExtendUserControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MainWindowViewModel.cs" />
     <Compile Include="SimpleUserControl.xaml.cs">
       <DependentUpon>SimpleUserControl.xaml</DependentUpon>
     </Compile>
+    <Page Include="ExtendUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>

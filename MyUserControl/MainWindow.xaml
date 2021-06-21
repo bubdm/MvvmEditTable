@@ -7,7 +7,24 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <StackPanel>
-        <local:SimpleUserControl />
-        <local:SimpleUserControl />
+        <!-- XAMLのみ完全固定版 -->
+        <!--<local:SimpleUserControl />
+        <local:SimpleUserControl />-->
+        
+        <!-- XAMLのみプロパティ変更可能版 -->
+        <!--<local:SimpleUserControl DataContext="Fix1" Foreground="DeepSkyBlue" />
+        <local:SimpleUserControl DataContext="Fix2" Foreground="Gold" />-->
+
+        <Separator />
+
+        <!-- ViewModelとの組み合わせ -->
+        <!--<local:SimpleUserControl DataContext="{Binding Input, Mode=TwoWay}" Foreground="Purple" />
+        <local:SimpleUserControl DataContext="{Binding Input}" Foreground="Lavender" />
+        <Button>
+            <local:SimpleUserControl DataContext="{Binding Input}" IsEnabled="False" />
+        </Button>-->
+        
+        <!-- コードビハインド解禁版 -->
+        <local:SimpleUserControl Id="10" DataContext="Fix1" Foreground="Lavender" />
     </StackPanel>
 </Window>

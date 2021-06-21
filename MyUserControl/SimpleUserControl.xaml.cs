@@ -20,9 +20,11 @@ namespace MyUserControl
     /// </summary>
     public partial class SimpleUserControl : UserControl
     {
+        public int Id { get; set; } = -1;
         public SimpleUserControl()
         {
             InitializeComponent();
+            (this.Content as FrameworkElement).DataContext = this;
         }
     }
 }

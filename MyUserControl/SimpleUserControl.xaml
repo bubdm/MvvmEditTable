@@ -7,8 +7,25 @@
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800"
              x:Name="parent">
-    <StackPanel DataContext="{Binding ElementName=parent}" Orientation="Horizontal">
-        <TextBlock Background="Aqua" Text="Hello" />
-        <TextBlock Background="DeepPink" Text="World" />
+    <!-- XAMLのみ完全固定版 -->
+    <!--<StackPanel Orientation="Horizontal">
+        <Rectangle Width="50" Fill="DeepPink" />
+        <TextBlock Text=" : " />
+        <TextBox Text="HogeHoge" />
+    </StackPanel>-->
+
+    <!-- XAMLのみプロパティ変更可能版 -->
+    <!--<StackPanel DataContext="{Binding ElementName=parent}" Orientation="Horizontal">
+        <Rectangle Width="50" Fill="{Binding Path=Foreground}" />
+        <TextBlock Text=" : " />
+        <TextBox Text="{Binding Path=DataContext}" />
+    </StackPanel>-->
+    
+    <!-- コードビハインド解禁版 -->
+    <StackPanel Orientation="Horizontal">
+        <Label Content="{Binding Path=Id}" />
+        <Rectangle Width="50" Fill="{Binding Path=Foreground}" />
+        <TextBlock Text=" : " />
+        <TextBox Text="{Binding Path=DataContext}" />
     </StackPanel>
 </UserControl>
